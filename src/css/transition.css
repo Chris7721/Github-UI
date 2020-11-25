@@ -1,0 +1,35 @@
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: rotateX(55deg)
+    }
+  
+    to {
+        transform: rotateX(0deg);
+        opacity: 1
+    }
+  }
+
+  @-webkit-keyframes widen {
+    from {
+        width: 38px;
+    }
+  
+    to {
+        width: 108px;
+        opacity: 1
+    }
+  }
+  
+  .animated {
+    animation-delay: .3s;
+    -webkit-animation-delay: .3s;
+    animation-duration: .15s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .15s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }
+  
