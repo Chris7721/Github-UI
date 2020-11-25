@@ -1,5 +1,6 @@
 :root {
   --font-color-primary: #24292e;
+  --font-color-dark: #1b1f23;
   --font-color-secondary: #586069;
   --font-color-blue: #0366d6;
   --font-size-large: 18.5px;
@@ -172,6 +173,7 @@ body {
   padding: 0;
   position: relative;
   flex: 1 !important;
+  max-width: 550px;
   flex-direction: column;
 }
 
@@ -223,7 +225,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--font-color-primary);
+  color: var(--font-color-dark) !important;
   font-weight: 300;
   border-bottom: 1px solid var(--color-input-border);
   box-sizing: border-box;
