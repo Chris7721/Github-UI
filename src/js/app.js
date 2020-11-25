@@ -1,4 +1,3 @@
-const testModules = require('./test-module');
 require('../css/app.css');
 require('../css/normalize.css');
 require('../css/transition.css');
