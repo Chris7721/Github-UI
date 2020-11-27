@@ -9,7 +9,8 @@ export const elements = {
 	headerMoreDropdown: document.querySelector('.header__actions-dropdown .dropdown'),
 	headerMenu: document.querySelector('.header__menu'),
 	headerDropdown: document.querySelector('.header__mobile'),
-	headerContainer: document.querySelector('.header__container')
+	headerContainer: document.querySelector('.header__container'),
+	headerInputDropdown: document.querySelector('.active-options nav')
 };
 
 export const renderLoader = (parent)=>{
@@ -26,9 +27,21 @@ export const renderLoader = (parent)=>{
 	parent.insertAdjacentHTML('afterbegin', loader);
 }
 
+export const renderRepoLoader = ()=>{
+	const loader = `
+	<div class="nav-loader-body">
+		<div class="nav-loader">Loading...</div>
+	</div>	
+	`
+	elements.headerInputDropdown.insertAdjacentHTML('afterbegin', loader);
+}
+
+export const clearRepoLoader = ()=>{
+	elements.headerInputDropdown.innerHTML=""
+	// loader.parentElement.removeChild(loader);
+}
+
 export const clearLoader = ()=>{
-    const loaders = document.querySelectorAll('.main__right-bottom-repo.loader');
-	console.log(loaders)
 	elements.repoContainer.innerHTML=""
 	// loader.parentElement.removeChild(loader);
 }

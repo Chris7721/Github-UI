@@ -1,14 +1,45 @@
 require('../css/app.css');
 require('../css/normalize.css');
 require('../css/transition.css');
-require('../scss/style.scss');
+require('../css/loader.css');
 import AppModel from "./Models";
 import { classExits } from "./utils";
-import { renderRepo, renderRepoTotal, renderTotalNumber } from "./Views";
-import { renderLoader, elements, clearLoader } from "./Views/base";
+import { renderRepo, renderRepoTotal, renderTotalNumber, renderDropdownRepo } from "./Views";
+import { renderLoader, elements, clearLoader, renderRepoLoader, clearRepoLoader } from "./Views/base";
 const state= {
     isHeaderDropdownShowing: false,
+    dropdownRepos: null
 }
+
+
+const fetchDropdownRepos = async ()=>{
+    return new Promise(async (resolve, reject) => {
+    try{
+        if(!state.dropdownRepos) {
+            state.dropdownRepo = new AppModel();
+            renderRepoLoader()
+            await state.dropdownRepo.fetchRepos()
+            state.dropdownRepos = state.dropdownRepo.result
+            clearRepoLoader();
+            state.dropdownRepo.result.forEach((repo, index)=>{
+                renderDropdownRepo(repo, index)
+            })
+            resolve()
+        } else {
+            resolve() 
+        }
+    }
+        catch(e){
+            alert("something went wrong while fetching data")
+            reject()
+            // clearLoader();
+        }
+    })
+    }
+
+    const searchDropdownInput =()=>{
+
+    }
 
 
 const mainController = async ()=>{
@@ -28,7 +59,6 @@ const mainController = async ()=>{
         }
         catch(e){
             alert("something went wrong while fetching data")
-            console.log(e, "yass");
             // clearLoader();
         }
     }
@@ -63,6 +93,7 @@ window.onload = function() {
 function searchClicked(e){
     console.log(state.headerInputClicked)
     elements.headerInput.classList.add('active')
+    fetchDropdownRepos()
     // state.headerInputClicked = true
 }
 

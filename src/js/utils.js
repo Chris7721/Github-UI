@@ -11,8 +11,9 @@ const getRepositories = () => `
                     stargazerCount,
                     primaryLanguage{
                     name,
-                    color
+                    color,
                     },
+                    nameWithOwner
                     createdAt
                 }
                 }

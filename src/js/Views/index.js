@@ -50,3 +50,19 @@ export const renderRepo = (repo)=>{
 
 }
 
+export const renderDropdownRepo = (repo, index)=>{
+
+    const markUp= `
+        <a href="#">
+            <div class="active-options-left">
+                <span><img src="./images/svg/repository.svg" alt="repo">${repo.nameWithOwner}</span>
+            </div>
+            <button class="button">Jump to<img src="./images/img/enter.png" alt="Forks"></button>
+        </a>
+        `
+          if(index <= 4) {
+              elements.headerInputDropdown.insertAdjacentHTML('beforeend', markUp);
+          }
+
+}
+
