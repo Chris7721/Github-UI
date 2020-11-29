@@ -26,7 +26,7 @@ export const APIOptions = {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 516c167fb42bfaddbb84279c269475b729bcd8f9"
+      "Authorization": "Bearer 26f598bd29044a94b4fe1245eb3086a866355cfb"
     },
     body: JSON.stringify({
       query: getRepositories()
