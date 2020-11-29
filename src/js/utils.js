@@ -26,7 +26,7 @@ export const APIOptions = {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 26f598bd29044a94b4fe1245eb3086a866355cfb"
+      "Authorization": `Bearer ${process.env.GITHUB_KEY}`
     },
     body: JSON.stringify({
       query: getRepositories()
