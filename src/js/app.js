@@ -16,6 +16,7 @@ const fetchDropdownRepos = async ()=>{
     return new Promise(async (resolve, reject) => {
     try{
         if(!state.dropdownRepos) {
+            clearRepoLoader();
             state.dropdownRepo = new AppModel();
             renderRepoLoader()
             await state.dropdownRepo.fetchRepos()
