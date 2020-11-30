@@ -942,6 +942,7 @@ body {
 
 .main__right {
   background-color: #fff;
+  min-height: 85vh;
 }
 .main__right-top {
   
