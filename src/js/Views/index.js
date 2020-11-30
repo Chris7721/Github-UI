@@ -53,7 +53,7 @@ export const renderRepo = (repo)=>{
 export const renderDropdownRepo = (repo, index)=>{
 
     const markUp= `
-        <a href="#">
+        <a href="${repo.url}" target="_blank" rel="noopener noreferrer">
             <div class="active-options-left">
                 <span><img src="./images/svg/repository.svg" alt="repo">${repo.nameWithOwner}</span>
             </div>

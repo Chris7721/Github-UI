@@ -669,7 +669,7 @@ body {
 }
 
 .main__header-cont a.selected{
-  border-bottom-color:#a74f40 !important;
+  border-bottom-color:#f9826c !important;
 }
 
 .main__header-cont a.selected .totalCount{
