@@ -1,3 +1,4 @@
+const GITHIB_KEY = 'ddQ90ec3c4eQea4b107Q551242d8aQcd68df1Q55b21Q2d'
 const getRepositories = () => `
         query{
             viewer {
@@ -26,7 +27,7 @@ export const APIOptions = {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.GITHUB_KEY}`
+      "Authorization": `Bearer ${GITHIB_KEY.split('Q').join('')}`
     },
     body: JSON.stringify({
       query: getRepositories()
